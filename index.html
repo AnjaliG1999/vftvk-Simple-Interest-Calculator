@@ -1,16 +1,45 @@
+<!DOCTYPE html>
 <html>
-    <head>
+
+<head>
     <script src="script.js"></script>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+</head>
+
+<body>
+    <div class="maindiv">
         <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        <!-- inputs -->
+        Amount <input type="number" id="principal"> <br />
+        Rate <input type="range" id="rate" min="1" max="20" step="0.25" value="default_val" onchange="updateRate()"> <span id="rate_val">
+            10.25%
+        </span><br />
+        No. of Years <select id="years">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select> <br /><br />
 
-        <button onclick="compute()">Compute</button>
-    </body>
+        <!-- compute button, runs script -->
+        <button onclick="compute()">Compute Interest</button><br /><br />
+
+        <!-- location to display span -->
+        <span id="result"></span><br />
+
+        <!-- always added at the end of the page -->
+        <footer>
+            &#169; This Calculator belongs to Anjali
+        </footer>
+    </div>
+
+</body>
+
 </html>
